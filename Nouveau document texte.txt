@@ -1,0 +1,2 @@
+lien du back deployé sur render : https://projet-de-selection-cda.onrender.com
+liste des blagues en json : https://projet-de-selection-cda.onrender.com/api/v1/blagues

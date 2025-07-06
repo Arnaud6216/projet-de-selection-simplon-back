@@ -40,3 +40,15 @@ exports.getRandomJoke = async (req, res) => {
     res.status(500).json({ error: "Erreur récupération de blague aléatoire" });
   }
 };
+
+exports.deleteJoke = async (req, res) => {
+  try {
+    const result = await Joke.destroy({ where: { id: req.params.id } });
+    if (result === 0) {
+      return res.status(404).json({ error: "Blague non trouvée" });
+    }
+    res.status(200).json({ message: "Blague supprimée" });
+  } catch (error) {
+    res.status(500).json({ error: "Erreur lors de la suppression" });
+  }
+};
